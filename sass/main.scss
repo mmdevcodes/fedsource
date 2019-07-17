@@ -1,0 +1,10 @@
+// Global
+@import "~normalize.css/normalize.css";
+@import "variables";
+@import "mixins";
+@import "global";
+@import "layout";
+@import "header";
+
+// Components
+@import "post-list";

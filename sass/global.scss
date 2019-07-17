@@ -1,0 +1,13 @@
+body {
+    background: $bg;
+    color: $black;
+    font-family: $family-sans-serif;
+}
+
+a {
+    transition: $trans;
+}
+
+.sr-only {
+    @include sr-only();
+}

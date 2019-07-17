@@ -1,0 +1,130 @@
+$post-grid-size: 75px;
+
+.post-list {
+    display: grid;
+    grid-template-rows: minmax($post-grid-size, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-item {
+    display: grid;
+    grid-template-columns: $post-grid-size 1fr;
+    background: $white;
+
+    &:last-child {
+        .post-item-content {
+            border-bottom: none;
+        }
+
+        .post-item-image-link::after {
+            content: none;
+        }
+    }
+}
+
+.post-item-image-link {
+    position: relative;
+    font-size: 0;
+    height: 100%;
+    opacity: 0.7;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color3;
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+}
+
+.post-item-content {
+    display: grid;
+    align-content: center;
+    border-bottom: 2px solid $color2;
+    padding: 7px 0 7px 1rem;
+}
+
+.post-item-meta {
+    color: $gray;
+    font-size: 0.92rem;
+    margin: 0 0 3px 0;
+
+    a {
+        color: $gray;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $color1;
+        }
+    }
+}
+
+.post-item-title {
+    margin: 0;
+    font-weight: $weight-medium;
+    font-size: 1.2rem;
+}
+
+.post-item-title-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $black;
+
+    span {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    svg {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+        fill: $color1;
+        margin: 0 0 0 5px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color2;
+    }
+}
+
+.post-item-summary {
+    font-size: 0.88rem;
+    margin: 5px 0 0 0;
+}
+
+.post-item-keywords {
+    font-size: 0.7rem;
+
+    span {
+        display: inline-block;
+        padding: 4px 6px;
+        margin: 8px 5px 0 0;
+        background: $color2;
+        color: $full-white;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

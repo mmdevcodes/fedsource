@@ -1,0 +1,26 @@
+$family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+/* Coolors Exported Palette - coolors.co/00acd3-005e89-002b49-00abdb-0095b7 */
+$color1: #00abdb;
+$color2: #005e89;
+$color3: #002b49;
+$color4: #b1e2ed;
+$color5: #0095b7;
+$white: #fdfdfd;
+$full-white: #fff;
+$black: #151515;
+$full-black: #000;
+$gray: #9facbd;
+$bg: #efefef;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+$easing: ease-out !default;
+$speed: 86ms !default;
+$trans: all $easing $speed !default;
