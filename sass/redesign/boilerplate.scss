@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: $family-sans-serif;
+    background: $gray-dark;
+}
+
+a {
+    transition: $trans;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.sr-only {
+    @include sr-only();
+}

@@ -1,0 +1,39 @@
+// Fonts
+$family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+// Brand Colors
+$color1: #00abdb;
+$color2: #005e89;
+$color3: #002b49;
+$color4: #b1e2ed;
+$color5: #0095b7;
+
+// Layout Colors
+$gray: #c0c0c0;
+$gray2: #4b4b4b;
+$gray-light: #e1e1e1;
+$gray-dark: #212121;
+$white: #fff;
+$black: #000;
+
+// Layout
+$gap: 0.75rem;
+$gap-sm: $gap / 2;
+$gap-md: $gap * 2;
+$gap-lg: $gap * 3;
+$header-size: 220px;
+$sidebar-size: 90px;
+$shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);
+
+// Breakpoints
+$bp-s: 20rem; // 320px
+$bp-m: 48rem; // 768px
+$bp-mw: 60rem; // 960px
+$bp-l: 70rem; // 1120px
+
+// Transitions
+$easing: ease-out !default;
+$speed: 86ms !default;
+$speed-long: .3s !default;
+$trans: all $easing $speed !default;
+$trans-long: all $easing $speed-long !default;

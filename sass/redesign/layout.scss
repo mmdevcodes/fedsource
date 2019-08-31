@@ -1,0 +1,52 @@
+.site-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    background: $gray-light;
+}
+
+.site-main {
+    margin: 0 $gap;
+    padding: $gap 0;
+}
+
+.site-main-section {
+    position: relative;
+    display: grid;
+    grid-gap: $gap;
+    flex: 1 1 auto;
+}
+
+.area {
+    display: grid;
+    align-content: start;
+    grid-gap: $gap;
+}
+
+.section {
+    background: $white;
+    box-shadow: $shadow;
+}
+
+.site-side {
+    display: none;
+    position: sticky;
+    top: 0;
+    background: $gray-dark;
+    height: 100vh;
+    flex: 0 0 auto;
+    width: $sidebar-size;
+}
+
+@media (min-width: $bp-mw) {
+    .site-container {
+        display: flex;
+    }
+
+    .site-main-section {
+        grid-template-columns: 7fr 4fr;
+    }
+
+    .site-side {
+        display: block;
+    }
+}
