@@ -20,6 +20,7 @@
     width: 100%;
     height: 100%;
     padding-right: $gap-md;
+    flex: 1 1 auto;
 
     &::after {
         content: '';
@@ -34,7 +35,7 @@
     }
 }
 
-.site-search-toggle {
+.site-search-trigger {
     @include resetBtn;
     width: 22px;
     height: 22px;
@@ -44,8 +45,7 @@
     transition: $trans;
 
     &:hover,
-    &:focus,
-    &.active {
+    &:focus {
         color: $color5;
     }
 
@@ -58,21 +58,29 @@
 }
 
 .site-search-input {
-    width: 0%;
     overflow: hidden;
     transition: $trans-long;
-    flex: 0 1 auto;
-
-    &.active {
-        flex: 1 1 auto;
-        width: 100%;
-        margin-left: $gap;
-    }
+    flex: 1 1 auto;
+    width: 100%;
+    margin-left: $gap;
 
     input {
         width: 100%;
         height: 100%;
         border: none;
+        color: $gray2;
+
+        @include inputPlaceholder() {
+            color: currentColor;
+            opacity: 0.5;
+        }
+
+        &:hover,
+        &:focus {
+            @include inputPlaceholder() {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -103,14 +111,14 @@
 @media (min-width: $bp-mw) {
     .site-search {
         width: auto;
+
+        &::after {
+            right: $gap-md;
+        }
     }
 
     .site-search-input {
-        width: 0px;
-
-        &.active {
-            width: 200px;
-        }
+        width: 200px;
     }
 
     .site-nav-links {

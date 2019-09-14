@@ -17,7 +17,7 @@ export default class SiteSearch extends Component {
 
         this.setState({
             active: !this.state.active
-        }, function () {
+        }, function() {
             if (this.state.active) {
                 this.searchInput.focus();
             }
@@ -26,14 +26,14 @@ export default class SiteSearch extends Component {
 
    render() {
        return (
-            <div className={`site-search ${this.state.active ? 'active' : ''}`}>
-                <button type="button" className={`site-search-toggle ${this.state.active ? 'active' : ''}`} onClick={this.toggleSearch}>
-                    <Icon name="search" desc="Toggle Search" />
+            <form className={`site-search ${this.state.active ? 'active' : ''}`}>
+                <button type="submit" className={`site-search-trigger ${this.state.active ? 'active' : ''}`} onClick={this.toggleSearch}>
+                    <Icon name="search" desc="Trigger Search Query" />
                 </button>
                 <div className={`site-search-input ${this.state.active ? 'active' : ''}`}>
                     <input ref={(input) => { this.searchInput = input; }} type="text" placeholder="Search for..." />
                 </div>
-            </div>
+            </form>
        );
    }
 }

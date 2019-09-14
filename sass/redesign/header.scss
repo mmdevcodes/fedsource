@@ -43,14 +43,13 @@
 @media (min-width: $bp-mw) {
     .site-header {
         display: grid;
-        grid-template-rows: $header-size 1fr;
+        grid-template-rows: $sidebar-size-lg 1fr;
         grid-template-columns: 1fr;
         position: sticky;
         top: 0;
-        width: $header-size;
+        width: $sidebar-size-lg;
         height: 100vh;
         flex: 0 0 auto;
-        padding: $gap-md;
 
         @at-root body.wide & {
             width: $sidebar-size;
