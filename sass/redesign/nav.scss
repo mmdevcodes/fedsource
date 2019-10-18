@@ -84,6 +84,12 @@
     }
 }
 
+.site-nav-info {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .site-nav-links {
     display: none;
     justify-content: flex-end;
@@ -122,6 +128,10 @@
     }
 
     .site-nav-links {
+        display: flex;
+    }
+
+    .site-nav-info {
         display: flex;
     }
 }

@@ -7,6 +7,7 @@
 .site-main {
     margin: 0 $gap;
     padding: $gap 0;
+    flex: 1 1 auto;
 }
 
 .site-main-section {
@@ -27,16 +28,6 @@
     box-shadow: $shadow;
 }
 
-.site-side {
-    display: none;
-    position: sticky;
-    top: 0;
-    background: $gray-dark;
-    height: 100vh;
-    flex: 0 0 auto;
-    width: $sidebar-size;
-}
-
 @media (min-width: $bp-mw) {
     .site-container {
         display: flex;
@@ -44,9 +35,5 @@
 
     .site-main-section {
         grid-template-columns: 7fr 4fr;
-    }
-
-    .site-side {
-        display: block;
     }
 }

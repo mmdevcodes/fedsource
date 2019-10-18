@@ -9,6 +9,10 @@
     grid-template-columns: minmax(75px, max-content) 1fr;
     background: $white;
     border-bottom: 1px solid $gray-light;
+
+    &:last-child {
+        border: none;
+    }
 }
 
 .item-link-img {

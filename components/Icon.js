@@ -1,5 +1,5 @@
-const Icon = ({name, desc}) => (
-    <svg aria-hidden={desc ? false : true} focusable="false">
+const Icon = ({name, desc, ...props}) => (
+    <svg aria-hidden={desc ? false : true} focusable="false" {...props}>
         {desc &&
             <title>{desc}</title>
         }

@@ -36,5 +36,5 @@ $bp-l: 70rem; // 1120px
 $easing: ease-out !default;
 $speed: 86ms !default;
 $speed-long: .3s !default;
-$trans: all $easing $speed !default;
-$trans-long: all $easing $speed-long !default;
+$trans: all $speed $easing !default;
+$trans-long: all $speed-long $easing !default;

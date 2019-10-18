@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import Link from 'next/link';
-import SiteSearch from '../components/SiteSearch';
+import SiteSearch from '../components/redesign/SiteSearch';
+import Header from '../components/redesign/Header';
 
 import '../sass/redesign/main-new.scss';
 
@@ -20,33 +20,20 @@ export default class Design extends Component {
     render() {
         return (
             <div className="site-container">
-                <header className="site-header">
-                    <h1 className="site-header-logo">
-                        <Link href="/">
-                            <a>
-                                <img src="/static/logo.svg" alt="FEDSource"/>
-                            </a>
-                        </Link>
-                    </h1>
-                    <ul className="site-header-links">
-                        <li>
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                        </li>
-                        <li><a href="#">Github</a></li>
-                    </ul>
-                </header>
+                <Header />
                 <main className="site-main">
                     <nav className="site-nav">
                         <SiteSearch />
-                        <ul className="site-nav-links">
-                            <li><a href="">Link 1</a></li>
-                            <li><a href="">Link 2</a></li>
-                            <li><a href="">Link 3</a></li>
-                            <li><a href="">Link 4</a></li>
-                            <li><a href="">Link 5</a></li>
-                        </ul>
+                        {/*
+                            <ul className="site-nav-links">
+                                <li><a href="">Link 1</a></li>
+                                <li><a href="">Link 2</a></li>
+                                <li><a href="">Link 3</a></li>
+                                <li><a href="">Link 4</a></li>
+                                <li><a href="">Link 5</a></li>
+                            </ul>
+                        */}
+                        <div className="site-nav-info">Last updated 2 minutes ago</div>
                     </nav>
                     <div className="site-main-section">
                         <div className="area">
@@ -159,9 +146,6 @@ export default class Design extends Component {
                         </div>
                     </div>
                 </main>
-                <aside className="site-side">
-                    <img src="//placehold.it/50" alt=""/>
-                </aside>
             </div>
         );
     }
