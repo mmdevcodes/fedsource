@@ -2,6 +2,7 @@ $header-icon-size: 20px;
 $header-icon-size-lg: 30px;
 
 .site-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +14,14 @@ $header-icon-size-lg: 30px;
 .site-header-logo {
     margin: 0;
     width: 50px;
+
+    a {
+        display: block;
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
 
     img {
         width: 100%;

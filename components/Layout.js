@@ -8,18 +8,6 @@ export default class Layout extends Component {
         super(props);
     }
 
-    handleScroll(e) {
-        if (window.pageYOffset > 50) {
-            document.body.classList.add('wide');
-        } else {
-            document.body.classList.remove('wide');
-        }
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
     render() {
         return (
             <div className="site-container">
@@ -47,7 +35,7 @@ export default class Layout extends Component {
                     <meta name="theme-color" content="#005e89" />
                 </Head>
                 <Header />
-                <main className="site-main">
+                <main id="maincontent" className="site-main">
                     {this.props.children}
                 </main>
             </div>

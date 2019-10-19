@@ -6,7 +6,7 @@ import SecondaryHeader from './SecondaryHeader';
 import Posts from './Posts';
 import Videos from './Videos';
 import TrendingRepos from './TrendingRepos';
-import ContentBlock from './ContentBlock';
+import Content from './Content';
 
 const allPostsQuery = gql`
     query allPosts($limit: Int!, $skip: Int!) {
@@ -72,38 +72,65 @@ export default class MainListings extends Component {
         this.state = {
             isFirstRender: true,
             postFilter: '',
-            postData: []
+            initialPosts: [],
+            posts: []
         }
 
         this.setPosts = posts => {
-            console.log('fsimdofisofimsdoifsdiosmf', posts);
+            this.setState({ posts });
+        }
 
+        this.queryComplete = posts => {
             if (this.state.isFirstRender) {
-                this.setState({ postData: posts, isFirstRender: false });
+                this.setState({
+                    isFirstRender: false,
+                    initialPosts: posts
+                }, () => this.setPosts(this.state.initialPosts));
             }
+        }
+
+        this.filterPosts = () => {
+            const filteredPosts = this.state.initialPosts.filter(post => {
+                const searchTerm = this.state.postFilter.toLowerCase();
+                const postTitle = post.title.toLowerCase();
+
+                // Search title
+                if (postTitle.includes(searchTerm)) return true;
+
+                // Search keywords
+                if (post.keywords.filter(keyword => keyword.toLowerCase().includes(searchTerm)).length > 0) return true;
+            });
+
+            this.setPosts(filteredPosts);
+        }
+
+        this.handleSearch = event => {
+            this.setState({ postFilter: event.target.value }, () => {
+                this.filterPosts();
+            });
         }
     }
 
     render() {
         return (
-            <Query query={allPostsQuery} variables={allPostsQueryVars} onCompleted={data => console.log('what', data)}>
+            <Query query={allPostsQuery} variables={allPostsQueryVars} onCompleted={data => this.queryComplete(data.posts)}>
                 {({ loading, error, data, fetchMore }) => {
                     if (error) return <ErrorMessage message='Error loading posts. The data server is probably restarting. Please refresh after a few seconds. If this error persists please contact < admin at fedsource.io >' error={error} />
                     if (loading) return <div>Loading</div>
 
                     const { posts, meta, trendingrepos, videos } = data;
-                    // const featuredPosts = this.state.postData.filter(item => item.featured === true);
-                    // const otherPosts = this.state.postData.filter(item => item.featured === false);
-                    // const areMorePosts = posts.length && posts.length < meta.postCount; // TODO: Hook this up again lol
+                    const featuredPosts = this.state.posts.filter(item => item.featured === true);
+                    const otherPosts = this.state.posts.filter(item => item.featured === false);
+                    const areMorePosts = posts.length && posts.length < meta.postCount; // TODO: Hook this up again lol
 
                     return (
                         <>
-                            <SecondaryHeader updated={meta.updated} />
+                            <SecondaryHeader updated={meta.updated} filter={this.state.postFilter} handleSearch={this.handleSearch} />
                             <div className="site-main-section">
                                 <div className="area">
-                                    {/* <Posts name="Featured Posts" posts={featuredPosts} featured={true} />
-                                    <Posts name="Posts" posts={otherPosts} /> */}
-                                    <ContentBlock>Have suggestions to add to the site? Email us at {'< admin at fedsource.io >'}</ContentBlock>
+                                    <Posts name="Featured Posts" posts={featuredPosts} featured={true} />
+                                    <Posts name="Posts" posts={otherPosts} />
+                                    <Content>Have suggestions to add to the site? Email us at {'< admin at fedsource.io >'}</Content>
                                 </div>
                                 <div className="area">
                                     <Videos name="Featured Videos" videos={videos} />

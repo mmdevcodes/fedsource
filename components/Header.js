@@ -3,6 +3,7 @@ import Icon from './Icon';
 
 export default () => (
     <header className="site-header">
+        <a className="skip-link" href="#maincontent">Skip to Main Content</a>
         <h1 className="site-header-logo">
             <Link href="/">
                 <a>

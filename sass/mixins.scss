@@ -42,7 +42,7 @@
 }
 
 // https://gist.github.com/mturnwall/9e055b89b374bb429947
-@mixin inputPlaceholder() {
+@mixin placeholder() {
     $selector: '';
     $prefixes: (
         moz: "::-moz",

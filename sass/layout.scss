@@ -39,7 +39,12 @@
 }
 
 .time {
-    text-decoration: underline dotted;
+    display: inline-block;
+    // https://stackoverflow.com/a/18064496/8862005
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8) 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
 }
 
 @media (min-width: $bp-mw) {

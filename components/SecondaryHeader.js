@@ -1,9 +1,9 @@
 import SiteSearch from './SiteSearch';
 import LastUpdated from './LastUpdated';
 
-export default ({ updated }) => (
+export default ({ updated, filter, handleSearch }) => (
     <header className="secondary-header">
-        <SiteSearch />
+        <SiteSearch filter={filter} handleSearch={handleSearch} />
         <LastUpdated updated={updated} />
     </header>
 );

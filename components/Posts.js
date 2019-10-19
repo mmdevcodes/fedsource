@@ -2,7 +2,7 @@ import Post from './Post';
 import shuffleSeed from 'shuffle-seed';
 
 export default ({ name, posts, featured }) => {
-    const shuffledPosts = shuffleSeed.shuffle(posts, posts[0].id);
+    const shuffledPosts = shuffleSeed.shuffle(posts, 'fedsource');
 
     return (
         <section className={`items ${featured ? 'featured' : ''}`} aria-label={name || null}>

@@ -24,8 +24,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-.sr-only {
-    @include sr-only();
+.skip-link {
+  @include sr-only;
+
+  &:focus {
+    overflow: visible;
+    clip: auto;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    border: 1px dashed currentColor;
+    padding: $gap-sm;
+    text-align: center;
+    color: $white;
+  }
 }
 
 @keyframes lazyloaded {

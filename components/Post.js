@@ -7,7 +7,7 @@ export default (props) => {
     return (
         <article className={`item ${props.featured ? 'featured' : ''}`} title={props.summary || null} aria-labelledby={props.id}>
             {props.thumbnail &&
-                <a href={props.postUrl} className="item-link-img">
+                <a href={props.postUrl} className="item-link-img" aria-hidden="true">
                     <LazyLoadImage
                         alt=""
                         src={props.thumbnail}
