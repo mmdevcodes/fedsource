@@ -1,34 +1,30 @@
 import Link from 'next/link'
+import Icon from './Icon';
 
-const Header = () => (
+export default () => (
     <header className="site-header">
-        <h1 className="site-logo">
+        <h1 className="site-header-logo">
             <Link href="/">
                 <a>
-                    <svg aria-hidden="true" focusable="false">
-                        <use xlinkHref="/static/svg-legend.svg#logo" />
-                    </svg>
-                    <span className="visually-hidden">FEDSource</span>
+                    <img src="/static/logo.svg" alt="FEDSource"/>
                 </a>
             </Link>
         </h1>
-        <nav className="site-nav">
-            <div className="site-search">
-                <label className="site-search-label" htmlFor="search">
-                    <span className="sr-only">Search</span>
-                    <svg className="site-search-icon" aria-hidden="true">
-                        <use xlinkHref="/static/svg-legend.svg#icon-search" />
-                    </svg>
-                </label>
-                <input className="site-search-input" id="search" type="text" placeholder="Search (doesn't work yet)" />
-            </div>
-            <div className="site-links">
+        <ul className="site-header-link-list">
+            <li className="site-header-link-item">
                 <Link href="/about">
-                    <a>About</a>
+                    <a className="site-header-link">
+                        <Icon name="info" className="site-header-link-icon" />
+                        <span className="site-header-link-text">About</span>
+                    </a>
                 </Link>
-            </div>
-        </nav>
+            </li>
+            <li className="site-header-link-item">
+                <a className="site-header-link" href="#">
+                    <Icon name="github" className="site-header-link-icon" />
+                    <span className="site-header-link-text">Github</span>
+                </a>
+            </li>
+        </ul>
     </header>
 );
-
-export default Header;

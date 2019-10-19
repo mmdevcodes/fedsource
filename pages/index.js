@@ -1,15 +1,13 @@
 import { Component } from 'react';
 import Layout from '../components/Layout';
-import PostList from '../components/PostList';
+import MainListings from '../components/MainListings';
 
-class Index extends Component {
+export default class Index extends Component {
     render() {
         return (
             <Layout>
-                <PostList />
+                <MainListings />
             </Layout>
         );
     }
 }
-
-export default Index;

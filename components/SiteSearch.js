@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Icon from '../Icon';
+import Icon from './Icon';
 
 export default class SiteSearch extends Component {
     constructor(props) {

@@ -10,7 +10,7 @@ TimeAgo.locale(en);
 // Create relative date/time formatter.
 const timeAgo = new TimeAgo('en-US');
 
-export default ({ date }) => {
+export default ({ date, ...props }) => {
     /**
      * TODO: Look into if this is still needed since moving to mongoDB...
      * TODO: Look into trying to use this again: https://github.com/catamphetamine/react-time-ago
@@ -41,6 +41,6 @@ export default ({ date }) => {
     }, []);
 
     return (
-        <time dateTime={dateISO} title={dateTooltip}>{state}</time>
+        <time dateTime={dateISO} title={dateTooltip} {...props}>{state}</time>
     );
 }

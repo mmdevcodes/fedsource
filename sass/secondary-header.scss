@@ -1,4 +1,4 @@
-.site-nav {
+.secondary-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,13 +84,11 @@
     }
 }
 
-.site-nav-info {
+.secondary-header-info {
     display: none;
-    justify-content: flex-end;
-    align-items: center;
 }
 
-.site-nav-links {
+.secondary-header-links {
     display: none;
     justify-content: flex-end;
     align-items: center;
@@ -127,11 +125,11 @@
         width: 200px;
     }
 
-    .site-nav-links {
+    .secondary-header-links {
         display: flex;
     }
 
-    .site-nav-info {
-        display: flex;
+    .secondary-header-info {
+        display: block;
     }
 }

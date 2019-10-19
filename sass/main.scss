@@ -2,9 +2,13 @@
 @import "~normalize.css/normalize.css";
 @import "variables";
 @import "mixins";
-@import "global";
+@import "boilerplate";
 @import "layout";
 @import "header";
+@import "secondary-header";
+@import "lazy-load";
 
 // Components
-@import "post-list";
+@import "item";
+@import "videos";
+@import "site-search";

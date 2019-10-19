@@ -1,8 +1,7 @@
 import { Component } from 'react';
-import SiteSearch from '../components/redesign/SiteSearch';
-import Header from '../components/redesign/Header';
+import SiteSearch from '../components/SiteSearch';
 
-import '../sass/redesign/main-new.scss';
+import '../sass/main.scss';
 
 export default class Design extends Component {
     handleScroll(e) {
@@ -20,12 +19,11 @@ export default class Design extends Component {
     render() {
         return (
             <div className="site-container">
-                <Header />
                 <main className="site-main">
-                    <nav className="site-nav">
+                    <header className="secondary-header">
                         <SiteSearch />
                         {/*
-                            <ul className="site-nav-links">
+                            <ul className="secondary-header-links">
                                 <li><a href="">Link 1</a></li>
                                 <li><a href="">Link 2</a></li>
                                 <li><a href="">Link 3</a></li>
@@ -33,8 +31,8 @@ export default class Design extends Component {
                                 <li><a href="">Link 5</a></li>
                             </ul>
                         */}
-                        <div className="site-nav-info">Last updated 2 minutes ago</div>
-                    </nav>
+                        <div className="secondary-header-info">Last updated 2 minutes ago</div>
+                    </header>
                     <div className="site-main-section">
                         <div className="area">
                             <section className="items featured" aria-label="Featured Posts">

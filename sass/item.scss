@@ -3,6 +3,15 @@
     box-shadow: $shadow;
 }
 
+.items-header {
+    padding: $gap;
+    // border-bottom: 2px solid $color5;
+    font-weight: bold;
+    border-left: 4px solid $color5;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
 .item {
     display: grid;
     // grid-template-columns: 75px 1fr;
@@ -20,8 +29,9 @@
     font-size: 0;
     opacity: 0.7;
     width: 75px;
+    // margin-bottom: -1px; // cover border
 
-    img {
+    * {
         object-fit: cover;
         width: 100%;
         height: 100%;
