@@ -21,7 +21,7 @@ export default () => (
                 </Link>
             </li>
             <li className="site-header-link-item">
-                <a className="site-header-link" href="#">
+                <a className="site-header-link" href="https://github.com/mmahandev/fedsource" target="_blank">
                     <Icon name="github" className="site-header-link-icon" />
                     <span className="site-header-link-text">Github</span>
                 </a>

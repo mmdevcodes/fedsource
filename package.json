@@ -1,15 +1,23 @@
 {
-  "name": "fedsource",
+  "name": "FEDSource",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend development content aggregator that fetches resources from around the internet",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "mmahandev",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmahandev/fedsource.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmahandev/fedsource/issues"
+  },
+  "homepage": "https://github.com/mmahandev/fedsource",
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "apollo-boost": "^0.4.3",
