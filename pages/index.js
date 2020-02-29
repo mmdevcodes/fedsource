@@ -59,7 +59,7 @@ const allPostsQuery = gql`
 `;
 
 const allPostsQueryVars = {
-    limit: 50,
+    limit: 100,
     skip: 0
 }
 
