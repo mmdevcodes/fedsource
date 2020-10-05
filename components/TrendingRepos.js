@@ -2,6 +2,7 @@ import Repo from './Repo';
 
 export default ({ name, repos }) => {
     return (
+        repos.length ?
         <section className="items" aria-label={name || null}>
             {name && <header className="items-header">{name}</header>}
             {repos.map((repo, index) => (
@@ -18,6 +19,6 @@ export default ({ name, repos }) => {
                     currentPeriodStars={repo.currentPeriodStars}
                 />
             ))}
-        </section>
+        </section> : <></>
     );
 }
